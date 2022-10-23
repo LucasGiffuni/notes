@@ -1,0 +1,64 @@
+.FileViwerStyle::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.FileViwerStyle::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.FileViwerStyle::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.FileViwerStyle::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.FileViwerStyle{
+  width: 99.5%;
+
+  overflow: auto;
+  display: block;
+
+  height: 55%;
+  min-height: 300px;
+  max-height: 300px;
+
+  border:1px solid black;
+}
+
+
+
+.TexAreaStyle::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.TexAreaStyle::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.TexAreaStyle::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.TexAreaStyle::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.TexAreaStyle{
+  width: 99.5%;
+
+  overflow: auto;
+  display: block;
+
+  height: 100%;
+  min-height: 300px;
+
+  border:1px solid black;
+}

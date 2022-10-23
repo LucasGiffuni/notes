@@ -1,0 +1,43 @@
+.line-numbers {
+    width: 20px;
+    text-align: right;
+
+}
+
+.line-numbers span {
+    counter-increment: linenumber;
+}
+
+.line-numbers span::before {
+    content: counter(linenumber);
+    display: block;
+    color: #506882;
+
+}
+
+.editor {
+    display: flex;
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 10px;
+    font-family: monospace;
+    line-height: 21px;
+    background: #282a3a;
+    width: 100%;
+
+}
+
+textarea {
+    line-height: 21px;
+    margin-left: 2px;
+    height: 100vh;
+    padding: 12px 20px;
+
+    overflow-y: hidden;
+    background: #282a3a;
+    color: #FFF;
+    padding: 0;
+    border: 0;
+    outline: none;
+    resize: none;
+}

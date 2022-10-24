@@ -6,7 +6,7 @@ import FilePath from './FilePath';
 
 const StyledTextarea = styled.textarea`
     resize: none;
-    autofocus: false;
+    autofocus: true;
     background-color :#282a3a; 
     text-color: ${props => (props.command ? "red" : "red")};
     line-height: 20px;
@@ -16,6 +16,8 @@ const StyledTextarea = styled.textarea`
     color: ${props => (props.command ? "red" : "white")};
     outline: none;
     resize: none;
+    
+
   `;
 
 const StyledFilePath = styled.div`
@@ -58,53 +60,25 @@ class TextAreaComponent extends Component {
       .fill('<span></span>')
       .join('');
 
-    var line = null;
     this.setState({ textAreaValue: event.target.value });
-
-    var arrayOfLines = this.state.textAreaValue.split('\n');
-    console.log(arrayOfLines);
-
-
-    arrayOfLines.forEach(line => {
-      this.setState({
-        command: false
-      });
-      if (line[0] === "[" && line[1] === "]") {
-        var l = line.split("", line.length)
-
-
-        l.forEach(char => {
-          var fchar = "";
-
-          if (char == "[") {
-            fchar = "{"
-            this.setState({
-              command: true
-            });
-          }
-          else if (char === "]") {
-            fchar = '}';
-            this.setState({
-              command: true
-            });
-          } else {
-            fchar = char
-
-          }
-
-        });
-
-
-      }
-
-    });
 
 
   }
 
 
   render() {
-    const { filePathText, handleOnChange } = this.props;
+    const { filePathText, changeTextArea } = this.props;
+
+    const sendTextAreaValue = () => {
+      changeTextArea(this.state.textAreaValue.split('\n'))
+    }
+
+    const textAreaOnChange = e => {
+      this.handleChange(e)
+      sendTextAreaValue()
+    }
+
+
 
     return (
       <StyledEditor>
@@ -116,10 +90,7 @@ class TextAreaComponent extends Component {
           <StyledTextarea
             command={this.state.command}
             value={this.state.textAreaValue}
-            onChange={
-              this.handleChange
-             
-            }
+            onChange={textAreaOnChange}
           >
 
           </StyledTextarea>

@@ -70,7 +70,6 @@ class HomeComponent extends Component {
             this.setState({
                 pathText: pathText
             });
-            console.log(this.state.pathText)
 
         };
 
@@ -78,8 +77,6 @@ class HomeComponent extends Component {
             this.setState({
                 textAreaText: textAreaText
             });
-            console.log(this.state.textAreaText)
-
         };
 
 
@@ -96,7 +93,7 @@ class HomeComponent extends Component {
                     </div>
                     <BorderDiv className='TexAreaStyle'>
                         <TextArea
-                            onChange={textAreaOnChange}
+                            changeTextArea={textAreaOnChange}
                             id={"TextArea"}
                             filePathText={this.state.pathText}
                         />
@@ -109,6 +106,7 @@ class HomeComponent extends Component {
                 <TextAreaStyle>
                     <Note
                         id={"Note"}
+                        textAreaValue={this.state.textAreaText}
                     />
                 </TextAreaStyle>
 

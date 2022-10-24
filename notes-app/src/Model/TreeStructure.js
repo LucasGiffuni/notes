@@ -12,7 +12,6 @@ class TreeStructure {
             Father.descendants.push(node);
         }
 
-      console.log(TreeModel.descendants)
     }
 
 }

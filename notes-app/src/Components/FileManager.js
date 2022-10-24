@@ -36,10 +36,10 @@ function addToPathVariable(explorer, expand) {
     if (!state.pathText.includes(explorer)) {
         let lastElement = state.pathText.at(state.pathText.length - 1)
 
-        if (state.pathText.length == 0) {
+        if (state.pathText.length === 0) {
             state.pathText.push(explorer)
         } else {
-            if (explorer.lvl != lastElement.lvl) {
+            if (explorer.lvl !== lastElement.lvl) {
                 state.pathText.push(explorer)
             } else {
                 state.pathText.pop()
@@ -51,7 +51,6 @@ function addToPathVariable(explorer, expand) {
             state.pathText.pop(explorer)
         }
     }
-    console.log(returnPathFromState());
 }
 
 function returnPathFromState() {

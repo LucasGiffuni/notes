@@ -8,16 +8,18 @@ const TextStyled = styled.p`
 
     color: orange;
     font-family: monospace;
-    font-size: 30px;
+    font-size: 18px;
 
 
 `;
 const ElementContainerStyle = styled.div`   
 
     background: #282a3a;
-    width: 450px;
-    height: 100px;
-    margin-left: 20px;
+    width: 100%;
+    height: 30px;
+    margin-left: 15px;
+    margin-top : 10px;
+    margin-bottom : 10px;
 
     align-items: center;
     display: flex;
@@ -51,7 +53,7 @@ export default class CheckBoxComponent extends Component {
             completed: false
         });
     }
-
+    
 
     renderCheckBoxUnCompleted = () => {
         const { text } = this.props;
@@ -64,7 +66,7 @@ export default class CheckBoxComponent extends Component {
                 onClick={this.setCompletedTrue}>
                 <div>
                     <TextStyled key={"CheckBox"}>
-                        [  ] {result}
+                      -  [  ] {result}
                     </TextStyled>
                 </div>
 
@@ -82,7 +84,7 @@ export default class CheckBoxComponent extends Component {
                 onClick={this.setCompletedFalse}>
                 <div>
                     <TextStyled key={"CheckBox"}>
-                        [x] {result}
+                     -  [x] {result}
                     </TextStyled>
                 </div>
 

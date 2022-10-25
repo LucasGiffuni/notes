@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import CheckBox from './NoteElements/CheckBoxComponent'
+import CheckBoxComponent from './NoteElements/CheckBoxComponent'
+import TitleComponent from './NoteElements/TitleComponent'
 
 
 const NoteContainerStyle = styled.div`   
@@ -16,6 +17,22 @@ const NoteContainerStyle = styled.div`
 
 
 `;
+const NormalTextStyle = styled.div`   
+ 
+    color: #FFF;
+    font-family: monospace;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 2px;
+
+
+`;
+const BlankSpaceStyle = styled.span`   
+white-space: pre-line
+
+`;
+
+
 const CommandTextStyled = styled.div`   
     background-color:#20222e;
    
@@ -35,7 +52,7 @@ export default class NoteComponent extends Component {
 
 
     state = {
-        command: false,
+        command: false
 
     };
 
@@ -49,9 +66,7 @@ export default class NoteComponent extends Component {
 
         const renderLines = textAreaValue.map((item, index) => {
             let actualLine = item;
-            lines.push(actualLine);
             let previousLine = lines.at(lines.length - 2);
-            console.log(lines)
 
 
 
@@ -59,11 +74,28 @@ export default class NoteComponent extends Component {
                 console.log("Imprimiendo linea comando")
                 return (
                     <div>
-                       <CheckBox text={actualLine}/>
-                        <div>
+                        <CheckBoxComponent text={actualLine} />
 
-                        </div>
                     </div>
+
+                )
+
+
+            } else if (actualLine[0] === "#" && actualLine != previousLine) {
+                console.log("Imprimiendo linea comando")
+                return (
+                    <div>
+                        <TitleComponent text={actualLine} />
+
+                    </div>
+
+                )
+
+
+            } else if (actualLine === " " && actualLine != previousLine) {
+                console.log("/n")
+                return (
+                    <BlankSpaceStyle />
 
                 )
 
@@ -71,15 +103,15 @@ export default class NoteComponent extends Component {
             } else {
                 console.log("Imprimiendo linea normal")
                 return (
-                    <div key={index}>
+                    <NormalTextStyle key={index}>
                         {actualLine}
-                    </div>
+                    </NormalTextStyle>
                 )
 
             }
 
 
-    
+
 
 
         })

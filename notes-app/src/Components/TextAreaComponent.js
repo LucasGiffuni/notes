@@ -16,7 +16,6 @@ const StyledTextarea = styled.textarea`
     color: ${props => (props.command ? "red" : "white")};
     outline: none;
     resize: none;
-    
 
   `;
 

@@ -4,45 +4,29 @@ import CheckBoxComponent from './NoteElements/CheckBoxComponent'
 import TitleComponent from './NoteElements/TitleComponent'
 
 
-const NoteContainerStyle = styled.div`   
+const NoteContainerStyle = styled.div`  
+
+    color: #FFF;
+    font-family: 'SH Pinscher';
+    src: url(../Resources/SHPinscher-Regular.otf) format("opentype");
+    font-size: 18px
     background-color:#20222e;
-   
     height: 100vh;
     width: 100%;
 
     overflow-y: hidden;
     background: #282a3a;
-    color: #FFF;
-    font-family: monospace;
-
+  
 
 `;
 const NormalTextStyle = styled.div`   
  
     color: #FFF;
-    font-family: monospace;
-    font-size: 15px;
-    margin-left: 15px;
+    font-family: 'SH Pinscher';
+    src: url(../Resources/SHPinscher-Regular.otf) format("opentype");
+    font-size: 18px
+    padding-left: 15px;
     margin-top: 2px;
-
-
-`;
-const BlankSpaceStyle = styled.span`   
-white-space: pre-line
-
-`;
-
-
-const CommandTextStyled = styled.div`   
-    background-color:#20222e;
-   
-    height: 100vh;
-    width: 100%;
-
-    overflow-y: hidden;
-    background: #282a3a;
-    color: red;
-    font-family: monospace;
 
 
 `;
@@ -68,7 +52,7 @@ export default class NoteComponent extends Component {
             let actualLine = item;
             let previousLine = lines.at(lines.length - 2);
 
-
+            const RE1 = new RegExp('^[*,\s]+:+[a-z]');
 
             if (actualLine[0] === "[" && actualLine != previousLine) {
                 console.log("Imprimiendo linea comando")
@@ -88,14 +72,6 @@ export default class NoteComponent extends Component {
                         <TitleComponent text={actualLine} />
 
                     </div>
-
-                )
-
-
-            } else if (actualLine === " " && actualLine != previousLine) {
-                console.log("/n")
-                return (
-                    <BlankSpaceStyle />
 
                 )
 

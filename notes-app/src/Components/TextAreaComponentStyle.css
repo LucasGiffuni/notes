@@ -32,7 +32,9 @@ textarea {
     margin-left: 2px;
     height: 100vh;
     padding: 12px 20px;
-
+    font-family: 'SH Pinscher';
+    src: url(../Resources/SHPinscher-Regular.otf) format("opentype");
+    font-size: 18px;
     overflow-y: hidden;
     background: #282a3a;
     color: #FFF;

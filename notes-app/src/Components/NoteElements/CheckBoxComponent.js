@@ -7,8 +7,9 @@ import styled from 'styled-components';
 const TextStyled = styled.p`   
 
     color: orange;
-    font-family: monospace;
-    font-size: 18px;
+    font-family: 'SH Pinscher';
+    src: url(../Resources/SHPinscher-Regular.otf) format("opentype");
+    font-size: 22px;
 
 
 `;

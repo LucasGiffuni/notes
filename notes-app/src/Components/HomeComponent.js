@@ -6,9 +6,8 @@ import Folder from './FileManager';
 import explorer from './Data/folderData';
 import TextArea from './TextAreaComponent';
 import Note from './NoteComponent';
-
-
-
+ 
+const fs = require('fs');
 
 
 const HomeStyle = styled.div`
@@ -66,6 +65,9 @@ class HomeComponent extends Component {
     render() {
 
 
+
+
+
         const handleClick = (pathText) => {
             this.setState({
                 pathText: pathText
@@ -77,6 +79,8 @@ class HomeComponent extends Component {
             this.setState({
                 textAreaText: textAreaText
             });
+
+            
         };
 
 
